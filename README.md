@@ -74,10 +74,34 @@ response = requests.post(url, json = data)
 ```
 Cargamos nuestro formato que le queremos dar a nuestro json.
 ```python
-url = "http://localhost:11434/api/generate"
+response = json.loads(response.text)
 ```
 
 ## 9. Retornamos nuestro response al html.
 ```python
 return render.index(response=response["response"])
+```
+
+ # Uso de la API GroqCloud 
+ Key API `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`
+
+```sh
+curl "https://api.groq.com/openai/v1/chat/completions" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer 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" \
+  -d '{
+         "messages": [
+           {
+             "role": "user",
+             "content": "1 + 1"
+           }
+         ],
+         "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+         "temperature": 1,
+         "max_completion_tokens": 1024,
+         "top_p": 1,
+         "stream": false,
+         "stop": null
+       }'
 ```
