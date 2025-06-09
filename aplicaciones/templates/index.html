@@ -1,0 +1,55 @@
+$def with (response = "")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEMMATEC</title>
+    <style>
+        .form {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form method="POST">
+            <textarea type="text" name="response" id="response" rows="30" cols="50" readonly>$response</textarea>
+            <br>
+            <label for="inp_promt">Prompt</label>
+            <br>
+            <input type="text" name="inp_promt" id="inp_promt" placeholder="prompt" required>
+            <br>
+            <button type="submit" name="generar">Generar</button>
+        </form>
+    </div>
+</body>
+</html>
