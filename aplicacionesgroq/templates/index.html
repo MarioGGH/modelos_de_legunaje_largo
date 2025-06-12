@@ -1,0 +1,79 @@
+$def with (response = "")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GROQTEC</title>
+    <style>
+        .form {
+            width: 80%;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #288ea7;
+            font-family: Arial, sans-serif;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            color: #333;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            resize: none;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input{
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            color: #333;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            transition: border-color 0.3s ease;
+        }
+        button{
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: none;
+            background-color: #288ea7;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <form method="POST">
+            <h1>GROQTEC</h1>
+            <textarea type="text" name="response" id="response" readonly>$response</textarea>
+            <br>
+            <label for="inp_promt">Prompt</label>
+            <br>
+            <input type="text" name="inp_prompt" id="inp_prompt" placeholder="prompt" required>
+            <br>
+            <button type="submit" name="generar">Generar</button>
+        </form>
+    </div>
+</body>
+</html>
