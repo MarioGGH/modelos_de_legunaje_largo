@@ -105,4 +105,46 @@ curl "https://api.groq.com/openai/v1/chat/completions" \
          "stop": null
        }'
 ```
-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
+`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`
+
+## 1. Uso de la api desde python
+A diferencia de la api de ollama esta necesitara un header donde de le indiquemos el tipo de contenido del cual va a hacer formulada la respuesta y nuestra api key que nos permitiria usar dicha api.
+
+```python
+headers = {
+                "Authorization" : "Bearer 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",
+                "Content-Type" : "application/json"
+            }
+            data = {
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": prompt
+                }
+                ],
+                "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+                "stream": False,
+                "temperature": 1,
+                "stop": None
+            }
+            url = "https://api.groq.com/openai/v1/chat/completions"
+```
+
+## 2. LLamar a la api y pasarle los parametros de la `url`, `headers` y el `data`.
+Al igual que la api de ollama a esta hay que pasarle los parametros para su uso.
+```python
+response = requests.post(url, headers=headers, json=data)
+response = json.loads(response.text)
+```
+
+## 3. Obtenemos el mensaje de la api `response`.
+En estas lienas hemos de obtener el mensaje y el contenido y asu vez se imprime este mensaje para poder saber si, si se esta obteniedo el mensaje correctamente.
+```python
+print(response["choices"][0]["message"]["content"])
+response = response["choices"][0]["message"]["content"]
+```
+
+## 4. Returnamos en el index el `response`.
+```python
+return render.index(response)
+```
