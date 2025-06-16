@@ -15,7 +15,7 @@ class Index:
     def groq(self, prompt):
         try:
             headers = {
-                "Authorization" : "Bearer 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",
+                "Authorization" : "Bearer {YOUR_API_KEY}",
                 "Content-Type" : "application/json"
             }
             data = {
