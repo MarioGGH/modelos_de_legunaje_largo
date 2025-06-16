@@ -83,13 +83,12 @@ return render.index(response=response["response"])
 ```
 
  # Uso de la API GroqCloud 
- Key API `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`
-
+ 
 ```sh
 curl "https://api.groq.com/openai/v1/chat/completions" \
   -X POST \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer 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" \
+  -H "Authorization: Bearer {YOUR_API_KEY}" \
   -d '{
          "messages": [
            {
@@ -105,14 +104,13 @@ curl "https://api.groq.com/openai/v1/chat/completions" \
          "stop": null
        }'
 ```
-`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`
 
 ## 1. Uso de la api desde python
 A diferencia de la api de ollama esta necesitara un header donde de le indiquemos el tipo de contenido del cual va a hacer formulada la respuesta y nuestra api key que nos permitiria usar dicha api.
 
 ```python
 headers = {
-                "Authorization" : "Bearer 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",
+                "Authorization" : "Bearer {YOUR_API_KEY}",
                 "Content-Type" : "application/json"
             }
             data = {
